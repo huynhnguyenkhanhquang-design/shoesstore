@@ -1,0 +1,270 @@
+.vipContainer {
+  background: radial-gradient(circle at top right, #1a1a1a, #0a0a0a);
+  color: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* HEADER - Sửa lỗi căn lề */
+.vipHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.vipLogo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.vipLogo span {
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.vipBackBtn {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vipBackBtn:hover {
+  color: #00e5ff;
+  transform: translateX(-5px);
+}
+
+/* BỐ CỤC CHÍNH - Căn chỉnh lại tỉ lệ */
+.vipMainGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  padding: 60px 8%;
+  max-width: 1500px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* KHU VỰC HÌNH ẢNH - Thêm hiệu ứng Glow */
+.vipImageArea {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%; /* Giới hạn chiều rộng tổng thể */
+}
+
+.vipImageCard {
+  position: relative;
+  background: #111;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  border: 1px solid #222;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  transition: all 0.5s ease;
+}
+
+/* Hiệu ứng đèn nền cho giày */
+.vipImageCard::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: rgba(0, 229, 255, 0.05);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.vipImg {
+  z-index: 1;
+  max-width: 100%; /* Đảm bảo không tràn container */
+  height: auto !important; /* Quan trọng: Giữ đúng tỉ lệ ảnh, không bị béo */
+  object-fit: contain;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.vipImageCard:hover .vipImg {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* NÚT SLIDER - Tinh tế hơn */
+.sliderBtnLeft, .sliderBtnRight {
+  position: absolute;
+  top: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.sliderBtnLeft:hover, .sliderBtnRight:hover {
+  background: #00e5ff;
+  color: #000;
+  border-color: #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.sliderBtnLeft { left: 30px; }
+.sliderBtnRight { right: 30px; }
+
+/* THUMBNAILS - Hiện đại hơn */
+.thumbnailRow {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap; /* Tự động xuống dòng nếu quá nhiều ảnh nhỏ */
+  width: 100%;
+}
+
+.thumbnail, .thumbnailActive {
+  width: 70px; /* Giảm kích thước ảnh nhỏ xuống một chút để cân đối */
+  height: 70px;
+  background: #111;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.thumbnailActive {
+  border: 2px solid #00e5ff;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2);
+}
+
+/* KHU VỰC THÔNG TIN */
+.vipCategory {
+  color: #00e5ff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.vipName {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #fff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vipPrice {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.vipDivider {
+  height: 1px;
+  background: linear-gradient(to right, #00e5ff, transparent);
+  margin: 40px 0;
+  opacity: 0.3;
+}
+
+/* SIZE SELECTION - Cải thiện grid */
+.vipSizeBox {
+  margin-bottom: 40px;
+}
+
+.vipLabel {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.vipSizeGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.vipSizeBtn, .vipSizeActive {
+  padding: 18px 0;
+  background: #111;
+  border: 1px solid #222;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.vipSizeBtn:hover {
+  border-color: #444;
+  background: #1a1a1a;
+}
+
+.vipSizeActive {
+  background: #00e5ff;
+  color: #000;
+  border-color: #00e5ff;
+  box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+}
+
+/* NÚT MUA HÀNG - Hiệu ứng Shine */
+.vipBuyBtn {
+  white-space: nowrap; /* Không cho phép chữ xuống dòng */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background: #00e5ff;
+  color: #000;
+  padding: 18px 10px; /* Giảm padding ngang một chút nếu cần */
+  border: none;
+  border-radius: 12px;
+  font-size: 14px; /* Có thể giảm 1 size để chữ nằm gọn hơn */
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.4s;
+  width: 100%;
+}
+
+.vipBuyBtn:hover {
+  background: #00f2ff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 229, 255, 0.3);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive cơ bản */
+@media (max-width: 1024px) {
+  .vipMainGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
